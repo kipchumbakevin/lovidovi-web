@@ -38,13 +38,25 @@ Route::post("/signupcode","CodesController@signUpCode");
 
 //send crush notification
 Route::post("/notifycrush","NotificationsController@insert");
-Route::post("/likepost","NotificationsController@like");
 
 //fetch notification
 Route::post("/fetch","NotificationsController@fetch");
+Route::post("/unread","NotificationsController@unread");
 
 //quotes
 Route::post("/insertquote","QuotesController@insert");
 Route::get("/fetchquote","QuotesController@fetchQuotes");
+
+//likes
+Route::post("/insertlike","LikesController@insert");
+Route::post("/fetchlikes","LikesController@fetchlikes");
+Route::post("/fetchlikescount","LikesController@fetchlikescount");
+
+//messages
+Route::post("/sendmsg","MessagesController@sendMessage");
+Route::post("/fetchmsgs","MessagesController@fetchMessages");
+Route::get("/fetchchats","MessagesController@fetchChats");
+
+
 
 

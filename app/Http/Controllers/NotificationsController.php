@@ -56,4 +56,13 @@ class NotificationsController extends Controller
         $notify = Notifications::where('receiver_phone',$request->phone)->latest()->get();
         return $notify;
     }
+
+    public function unread(Request $request)
+    {
+        $output = preg_replace("/^0/", "+254", $request->phone);
+        $notif = Notifications::where('receiver_phone',$output)->where('status',false)->count();
+        return response()->json([
+            'num' => $notif,
+        ],201);
+    }
 }

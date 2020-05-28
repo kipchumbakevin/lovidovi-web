@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Codes;
+use App\Like;
+use App\Message;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -37,6 +39,17 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password)
 
             ]);
+            $sms = Message::all();
+            $arr = [];
+            foreach ($sms as $sm){
+                array_push($arr,$sm->receiver_name);
+            }
+            if (in_array($request->username,$arr)){
+                $ss = Message::where('receiver_name',$output);
+                $ss->update([
+                   'receiver_name'=>$request->username
+                ]);
+            }
             $user->save();
             $codes->delete();
             $tokenResult = $user->createToken('Personal Access Token');
