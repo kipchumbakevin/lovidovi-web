@@ -89,43 +89,26 @@ class MessagesController extends Controller
 
             }
         }
-//        if (!in_array($u->phone,$arrr) || !in_array($u->id,$arrr)){
-//            if (in_array($output,$rr)){
-//                $ww = User::where('phone',$output)->first();
-//                $chat = new Chat();
-//                $chat->owner_id=Auth::user()->id;
-//                $chat->participant_id = $ww->id;
-//                $chat->save();
-//                $new_item = Chat::orderby('created_at', 'desc')->first();
-//                $mesg = new Message();
-//                $mesg->message = $request->msg;
-//                $mesg->sender_id = Auth::user()->id;
-//                $mesg->chat_id=$new_item->id;
-//                $mesg->receiver_id = $u->id;
-//                $mesg->save();
-//            }if (!in_array($output,$rr)){
-//                $chat = new Chat();
-//                $chat->owner_id=Auth::user()->id;
-//                $chat->participant_id = $output;
-//                $chat->save();
-//                $new_item = Chat::orderby('created_at', 'desc')->first();
-//                $mesg = new Message();
-//                $mesg->message = $request->msg;
-//                $mesg->sender_id = Auth::user()->id;
-//                $mesg->chat_id=$new_item->id;
-//                $mesg->receiver_id = $u->id;
-//                $mesg->save();
-//            }
-//
-//
-//        }
     }
 
     public function fetchChats(Request $request)
     {
         $gg =  Auth::guard('api')->user();
-        $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->latest()->get();
+        $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->with('participant')->latest()->get();
+       // $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->latest()->get();
         return $c;
+//        $us = User::all('id');
+//        $tt = [];
+//        foreach ($c as $cch){
+//            array_push($tt,$cch->participant_id);
+//        }
+//        if (in_array($us,$tt)){
+//            $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->with('participant')->latest()->get();
+//            return $c;
+//        }else{
+//            $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->latest()->get();
+//            return $c;
+//        }
     }
     public function fetchMessages(Request $request)
     {

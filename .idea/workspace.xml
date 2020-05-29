@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +183,9 @@
       <workItem from="1590512976144" duration="7560000" />
       <workItem from="1590598325866" duration="451000" />
       <workItem from="1590664976137" duration="7505000" />
-      <workItem from="1590679283085" duration="6884000" />
+      <workItem from="1590679283085" duration="8966000" />
+      <workItem from="1590749392901" duration="1509000" />
+      <workItem from="1590768487630" duration="252000" />
     </task>
     <servers />
   </component>

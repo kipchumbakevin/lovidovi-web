@@ -12,4 +12,7 @@ class Chat extends Model
     public function message(){
         return $this->hasMany(Message::class,'sender_id');
     }
+    public function participant(){
+        return $this->hasOne(User::class,'id');
+    }
 }
