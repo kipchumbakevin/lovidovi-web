@@ -18,6 +18,8 @@ class CreateChatsTable extends Migration
             $table->integer('owner_id');
             $table->string('participant_id')->default(0);
             $table->boolean('group')->default(false);
+            $table->integer('owner_r')->default(0);
+            $table->integer('participant_r')->default(0);
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMessagesTable extends Migration
+class CreateSecretMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('secret_messages', function (Blueprint $table) {
             $table->id();
             $table->integer('sender_id');
             $table->string('receiver_id')->default(0);
@@ -21,8 +21,6 @@ class CreateMessagesTable extends Migration
             $table->integer('chat_id')->default(0);
             $table->string('message');
             $table->boolean('has_media')->default(false);
-            $table->integer('sender_r')->default(0);
-            $table->integer('receiver_r')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('secret_messages');
     }
 }

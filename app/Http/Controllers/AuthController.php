@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Chat;
 use App\Codes;
 use App\Like;
 use App\Message;
+use App\SecretChat;
+use App\SecretMessage;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -39,17 +42,7 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password)
 
             ]);
-            $sms = Message::all();
-            $arr = [];
-            foreach ($sms as $sm){
-                array_push($arr,$sm->receiver_name);
-            }
-            if (in_array($request->username,$arr)){
-                $ss = Message::where('receiver_name',$output);
-                $ss->update([
-                   'receiver_name'=>$request->username
-                ]);
-            }
+
             $user->save();
             $codes->delete();
             $tokenResult = $user->createToken('Personal Access Token');
@@ -57,6 +50,62 @@ class AuthController extends Controller
             if ($request->remember_me)
                 $token->expires_at = Carbon::now()->addWeeks(1);
             $token->save();
+            $sms = Message::all();
+            $arr = [];
+            foreach ($sms as $sm){
+                array_push($arr,$sm->receiver_id);
+            }
+            if (in_array($output,$arr)){
+                $new_item = User::orderby('created_at', 'desc')->first();
+                $ss = Message::where('receiver_id',$output)->get();
+                foreach ($ss as $bb){
+                    $bb->update([
+                        'receiver_id'=>$new_item->id
+                    ]);
+                }
+            }
+            $smsc = Chat::all();
+            $arrc = [];
+            foreach ($smsc as $smc){
+                array_push($arrc,$smc->participant_id);
+            }
+            if (in_array($output,$arrc)){
+                $new_item = User::orderby('created_at', 'desc')->first();
+                $ssc = Chat::where('participant_id',$output)->get();
+                foreach ($ssc as $bbc){
+                    $bbc->update([
+                        'participant_id'=>$new_item->id
+                    ]);
+                }
+            }
+            $smss = SecretMessage::all();
+            $arrs = [];
+            foreach ($smss as $smb){
+                array_push($arrs,$smb->receiver_id);
+            }
+            if (in_array($output,$arrs)){
+                $new_item = User::orderby('created_at', 'desc')->first();
+                $ssss = SecretMessage::where('receiver_id',$output)->get();
+                foreach ($ssss as $bbs){
+                    $bbs->update([
+                        'receiver_id'=>$new_item->id
+                    ]);
+                }
+            }
+            $smssc = SecretChat::all();
+            $arrsc = [];
+            foreach ($smssc as $smsc){
+                array_push($arrsc,$smsc->participant_id);
+            }
+            if (in_array($output,$arrsc)){
+                $new_item = User::orderby('created_at', 'desc')->first();
+                $sssc = SecretChat::where('participant_id',$output)->get();
+                foreach ($sssc as $bbsc){
+                    $bbsc->update([
+                        'participant_id'=>$new_item->id
+                    ]);
+                }
+            }
             return response()->json([
                 'access_token' => $tokenResult->accessToken,
                 'message'=>"Successfully registered",

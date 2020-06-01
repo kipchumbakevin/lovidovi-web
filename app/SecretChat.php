@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Chat extends Model
+class SecretChat extends Model
 {
     protected $fillable = [
         'owner_id', 'participant_id','created_at'
@@ -18,5 +18,4 @@ class Chat extends Model
     public function participant(){
         return $this->belongsTo(User::class,'participant_id');
     }
-
 }

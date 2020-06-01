@@ -16,7 +16,7 @@ class QuotesController extends Controller
     {
         $qq = new Quotes();
         $qq->quote = $request->quote;
-        $qq->sender_id = Auth::user()->id;
+        $qq->sender_id = Auth::guard('api')->user()->id;
         $qq->save();
         return response()->json([
             'message' => 'Quote added.',

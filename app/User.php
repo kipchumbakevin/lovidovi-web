@@ -43,4 +43,10 @@ class User extends Authenticatable
     public function chatt(){
         return $this->hasMany(Chat::class,'owner_id');
     }
+    public function secretmesg(){
+        return $this->hasMany(SecretMessage::class,'sender_id');
+    }
+    public function secretchatt(){
+        return $this->hasMany(SecretChat::class,'owner_id');
+    }
 }

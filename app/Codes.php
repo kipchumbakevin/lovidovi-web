@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Codes extends Model
 {
-    //
+    protected $fillable = [
+        'code', 'phone'
+    ];
 }

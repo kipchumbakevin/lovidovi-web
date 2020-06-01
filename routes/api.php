@@ -57,6 +57,31 @@ Route::post("/sendmsg","MessagesController@sendMessage");
 Route::post("/fetchmsgs","MessagesController@fetchMessages");
 Route::get("/fetchchats","MessagesController@fetchChats");
 
+//secret messages
+Route::post("/sendsecret","SecretMesssagesController@sendSecretMessage");
+Route::post("/fetchsecret","SecretMesssagesController@fetchSecretMessages");
+Route::get("/fetchsecretchats","SecretMesssagesController@fetchSecretChats");
+
+//unread chat
+Route::post("/unreadchat","ChatsController@unreadChat");
+//read notifications
+Route::post("/readnotifications","NotificationsController@readall");
+
+//change password
+Route::post("/changepassword","ChangePersonalInfoController@changePassword");
+
+//forgot password
+Route::post("/sendcode","NoAuthController@sendCode");//body(phone
+Route::post("/newpassword","NoAuthController@changePassword");//body(code,newpass)
+Route::post("/checkifexist","NoAuthController@checkIfUserExists");//body(phone,username)
+//change username
+Route::post("/changedetails","ChangePersonalInfoController@changedetails");//body(username)
+//CHANGE PHONE
+//check phone
+Route::post("/checkphone","ChangePersonalInfoController@checkNumberIfCorrect");//body(phone,password)
+Route::post("/generatecode","ChangePersonalInfoController@generateChangePhoneCode");
+Route::post("/changephone","ChangePersonalInfoController@changephone");
+
 
 
 

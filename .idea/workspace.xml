@@ -4,7 +4,20 @@
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Codes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Codes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NoAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NoAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_21_134312_create_notifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_21_134312_create_notifications_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,6 +199,21 @@
       <workItem from="1590679283085" duration="8966000" />
       <workItem from="1590749392901" duration="1509000" />
       <workItem from="1590768487630" duration="252000" />
+      <workItem from="1590820724153" duration="5959000" />
+      <workItem from="1590828598777" duration="1082000" />
+      <workItem from="1590833355829" duration="229000" />
+      <workItem from="1590838351048" duration="8926000" />
+      <workItem from="1590911049385" duration="555000" />
+      <workItem from="1590912949989" duration="1226000" />
+      <workItem from="1590915427151" duration="966000" />
+      <workItem from="1590918906356" duration="193000" />
+      <workItem from="1590919531818" duration="1542000" />
+      <workItem from="1590926077004" duration="3337000" />
+      <workItem from="1590930466994" duration="338000" />
+      <workItem from="1590934139517" duration="6762000" />
+      <workItem from="1590946505485" duration="1159000" />
+      <workItem from="1591002457167" duration="22000" />
+      <workItem from="1591005800141" duration="2339000" />
     </task>
     <servers />
   </component>
