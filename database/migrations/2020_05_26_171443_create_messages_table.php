@@ -21,8 +21,7 @@ class CreateMessagesTable extends Migration
             $table->integer('chat_id')->default(0);
             $table->string('message');
             $table->boolean('has_media')->default(false);
-            $table->integer('sender_r')->default(0);
-            $table->integer('receiver_r')->default(0);
+            $table->boolean('receiver_read')->default(false);
             $table->timestamps();
         });
     }

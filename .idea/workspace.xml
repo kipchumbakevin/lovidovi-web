@@ -4,19 +4,13 @@
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Codes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Codes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NoAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NoAuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notifications.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_21_134312_create_notifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_21_134312_create_notifications_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/SecretChat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SecretChat.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -214,6 +208,11 @@
       <workItem from="1590946505485" duration="1159000" />
       <workItem from="1591002457167" duration="22000" />
       <workItem from="1591005800141" duration="2339000" />
+      <workItem from="1591720395261" duration="3831000" />
+      <workItem from="1592314566907" duration="641000" />
+      <workItem from="1592318692353" duration="3044000" />
+      <workItem from="1592491486288" duration="2866000" />
+      <workItem from="1592579155725" duration="442000" />
     </task>
     <servers />
   </component>

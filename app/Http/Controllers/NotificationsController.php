@@ -37,13 +37,13 @@ class NotificationsController extends Controller
         foreach ($wwww as $ttt){
             array_push($rrr,$ttt->phone);
         }
-        
+
         if (in_array($output,$ss)){
             return response()->json([
                 'message' => 'You already mentioned this person as your crush',
             ],200);
         }else{
-            if ($output==Auth::user()->phone){
+            if ($output==Auth::guard('api')->user()->phone){
                 return response()->json([
                     'message' => 'You cannot use your own phone number.',
                 ],200);
@@ -101,6 +101,14 @@ class NotificationsController extends Controller
         $notif = Notifications::where('receiver_phone',$output)->where('status',false)->count();
         return response()->json([
             'num' => $notif,
+        ],201);
+    }
+	 public function deleteN(Request $request)
+    {
+        $notif = Notifications::where('id',$request->id)->first();
+		$notif->delete();
+        return response()->json([
+            'messsage' => "Deleted successfully",
         ],201);
     }
 

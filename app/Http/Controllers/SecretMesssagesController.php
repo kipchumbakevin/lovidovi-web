@@ -59,7 +59,7 @@ class SecretMesssagesController extends Controller
                     $dm = SecretChat::where('participant_id', Auth::guard('api')->user()->id)
                         ->where('owner_id',$xx->id)->first();
                     $mesg = new SecretMessage();
-                    $mesg->message = $request->msg."ss";
+                    $mesg->message = $request->msg;
                     $mesg->sender_id = Auth::guard('api')->user()->id;
                     $mesg->chat_id = $dm->id;
                     $mesg->receiver_id = $xx->id;
@@ -78,7 +78,7 @@ class SecretMesssagesController extends Controller
                 $chat->save();
                 $new_item = SecretChat::orderby('created_at', 'desc')->first();
                 $mesg = new SecretMessage();
-                $mesg->message = $request->msg."ww";
+                $mesg->message = $request->msg;
                 $mesg->sender_id = Auth::user()->id;
                 $mesg->chat_id=$new_item->id;
                 $mesg->receiver_id = $xx->id;
@@ -161,7 +161,7 @@ class SecretMesssagesController extends Controller
     {
         $gg =  Auth::guard('api')->user();
         $c = SecretChat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
-        with('participant')->with('user')->latest('updated_at')->get();
+        with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
         return $c;
 
     }
@@ -169,5 +169,24 @@ class SecretMesssagesController extends Controller
     {
         $m = SecretMessage::where('chat_id', $request->chat_id)->latest()->get();
         return $m;
+    }
+    public function readUnreadMessages(Request $request)
+    {
+        $mmm = SecretMessage::where('chat_id',$request->chat_id)->get();
+        foreach ($mmm as $ddd){
+            $ddd->receiver_read=true;
+            $ddd->save();
+        }
+        return response()->json([
+            'message' => 'Done',
+        ],201);
+    }
+    public function unreadMessages()
+    {
+        $notif = SecretMessage::where('receiver_id',Auth::guard('api')->user()->id)->where('receiver_read',false)->count();
+        return response()->json([
+            'num' => $notif,
+        ],201);
+
     }
 }

@@ -45,7 +45,7 @@ class MessagesController extends Controller
                         $dm = Chat::where('owner_id', Auth::guard('api')->user()->id)
                             ->where('participant_id',$xx->id)->first();
                         $mesg = new Message();
-                        $mesg->message = $request->msg."gg";
+                        $mesg->message = $request->msg;
                         $mesg->sender_id = Auth::guard('api')->user()->id;
                         $mesg->chat_id = $dm->id;
                         $mesg->receiver_id = $xx->id;
@@ -163,7 +163,7 @@ class MessagesController extends Controller
     {
         $gg =  Auth::guard('api')->user();
         $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
-            with('participant')->with('user')->latest('updated_at')->get();
+            with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
         return $c;
 
     }
@@ -171,5 +171,26 @@ class MessagesController extends Controller
     {
         $m = Message::where('chat_id', $request->chat_id)->latest()->get();
         return $m;
+    }
+
+    public function unreadMessages()
+    {
+        $notif = Message::where('receiver_id',Auth::guard('api')->user()->id)->where('receiver_read',false)->count();
+        return response()->json([
+            'num' => $notif,
+        ],201);
+
+    }
+
+    public function readUnreadMessages(Request $request)
+    {
+        $mmm = Message::where('chat_id',$request->chat_id)->get();
+        foreach ($mmm as $ddd){
+            $ddd->receiver_read=true;
+            $ddd->save();
+        }
+        return response()->json([
+            'message' => 'Done',
+        ],201);
     }
 }

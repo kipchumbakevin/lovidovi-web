@@ -42,6 +42,8 @@ Route::post("/notifycrush","NotificationsController@insert");
 //fetch notification
 Route::post("/fetch","NotificationsController@fetch");
 Route::post("/unread","NotificationsController@unread");
+//delete notification
+Route::post("/deletenot","NotificationsController@deleteN");
 
 //quotes
 Route::post("/insertquote","QuotesController@insert");
@@ -56,11 +58,15 @@ Route::post("/fetchlikescount","LikesController@fetchlikescount");
 Route::post("/sendmsg","MessagesController@sendMessage");
 Route::post("/fetchmsgs","MessagesController@fetchMessages");
 Route::get("/fetchchats","MessagesController@fetchChats");
+Route::get("/fetchunreadmessages","MessagesController@unreadMessages");
+Route::post("/readmessageunread","MessagesController@readUnreadMessages");
 
 //secret messages
 Route::post("/sendsecret","SecretMesssagesController@sendSecretMessage");
 Route::post("/fetchsecret","SecretMesssagesController@fetchSecretMessages");
 Route::get("/fetchsecretchats","SecretMesssagesController@fetchSecretChats");
+Route::get("/fetchunreadsecret","SecretMesssagesController@unreadMessages");
+Route::post("/readsecretmessageunread","SecretMesssagesController@readUnreadMessages");
 
 //unread chat
 Route::post("/unreadchat","ChatsController@unreadChat");

@@ -21,6 +21,7 @@ class CreateSecretMessagesTable extends Migration
             $table->integer('chat_id')->default(0);
             $table->string('message');
             $table->boolean('has_media')->default(false);
+            $table->boolean('receiver_read')->default(false);
             $table->timestamps();
         });
     }
