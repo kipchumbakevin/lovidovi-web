@@ -17,7 +17,7 @@ class Chat extends Model
         return $this->hasMany(Message::class,'sender_id');
     }
     public function receiver(){
-        $p= $this->hasOne(Message::class)->orderBy('created_at','desc');
+        $p= $this->hasOne(Message::class,'chat_id')->orderBy('created_at','desc');
         return $p;
     }
     public function participant(){

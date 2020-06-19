@@ -161,7 +161,7 @@ class SecretMesssagesController extends Controller
     {
         $gg =  Auth::guard('api')->user();
         $c = SecretChat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
-        with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
+            with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
         return $c;
 
     }

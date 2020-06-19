@@ -13,6 +13,6 @@ class SecretMessage extends Model
         return $this->belongsTo(User::class,'sender_id');
     }
     public function chat(){
-        return $this->belongsTo(SecretChat::class,'owner_id');
+        return $this->belongsTo(SecretChat::class,'chat_id');
     }
 }

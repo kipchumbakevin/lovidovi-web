@@ -4,14 +4,9 @@
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/SecretChat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SecretChat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/SecretMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SecretMessage.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,6 +208,7 @@
       <workItem from="1592318692353" duration="3044000" />
       <workItem from="1592491486288" duration="2866000" />
       <workItem from="1592579155725" duration="442000" />
+      <workItem from="1592590004550" duration="2035000" />
     </task>
     <servers />
   </component>

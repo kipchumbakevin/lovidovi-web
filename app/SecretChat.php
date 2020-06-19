@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class SecretChat extends Model
 {
@@ -12,11 +13,11 @@ class SecretChat extends Model
     public function owner(){
         return $this->belongsTo(User::class,'owner_id');
     }
-    public function message(){
+    public function sender(){
         return $this->hasMany(SecretMessage::class,'sender_id');
     }
     public function receiver(){
-        $p= $this->hasOne(SecretMessage::class)->orderBy('created_at','desc');
+        $p= $this->hasOne(SecretMessage::class,'chat_id')->orderBy('created_at','desc');
         return $p;
     }
     public function participant(){
