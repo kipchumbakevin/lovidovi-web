@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/privacypolicy.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/SecretChat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SecretChat.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/SecretMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SecretMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_30_073842_create_secret_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_30_073842_create_secret_chats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,6 +218,24 @@
       <workItem from="1592491486288" duration="2866000" />
       <workItem from="1592579155725" duration="442000" />
       <workItem from="1592590004550" duration="2035000" />
+      <workItem from="1593097243638" duration="119000" />
+      <workItem from="1593267401109" duration="7312000" />
+      <workItem from="1593327065136" duration="215000" />
+      <workItem from="1593351877393" duration="1290000" />
+      <workItem from="1593356980921" duration="3189000" />
+      <workItem from="1593369895886" duration="5984000" />
+      <workItem from="1593758111872" duration="9358000" />
+      <workItem from="1594480920730" duration="845000" />
+      <workItem from="1596796094887" duration="8584000" />
+      <workItem from="1596814030504" duration="4019000" />
+      <workItem from="1597221465197" duration="1997000" />
+      <workItem from="1597227557280" duration="242000" />
+      <workItem from="1598026183964" duration="705000" />
+      <workItem from="1598031920819" duration="12422000" />
+      <workItem from="1598108148368" duration="599000" />
+      <workItem from="1598196631793" duration="12603000" />
+      <workItem from="1598360926051" duration="2772000" />
+      <workItem from="1598372206993" duration="801000" />
     </task>
     <servers />
   </component>

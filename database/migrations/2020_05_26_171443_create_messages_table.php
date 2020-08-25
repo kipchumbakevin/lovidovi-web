@@ -22,6 +22,8 @@ class CreateMessagesTable extends Migration
             $table->string('message');
             $table->boolean('has_media')->default(false);
             $table->boolean('receiver_read')->default(false);
+            $table->boolean('sender_delete')->default(false);
+            $table->boolean('receiver_delete')->default(false);
             $table->timestamps();
         });
     }

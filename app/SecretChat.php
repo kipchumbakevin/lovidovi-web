@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class SecretChat extends Model
 {
     protected $fillable = [
-        'owner_id', 'participant_id','created_at'
+        'owner_id', 'participant_id','created_at','owner_delete','participant_delete'
     ];
     public function owner(){
         return $this->belongsTo(User::class,'owner_id');

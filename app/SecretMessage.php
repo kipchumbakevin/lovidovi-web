@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SecretMessage extends Model
 {
     protected $fillable = [
-        'sender_id', 'receiver_id'
+        'sender_id', 'receiver_id','sender_delete','receiver_delete'
     ];
     public function use(){
         return $this->belongsTo(User::class,'sender_id');

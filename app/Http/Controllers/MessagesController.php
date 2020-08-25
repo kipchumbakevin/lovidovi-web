@@ -67,6 +67,10 @@ class MessagesController extends Controller
                         $mesg->save();
                         $new_item = Message::orderby('created_at', 'desc')->first();
                         $dm->touch();
+                        $dm->update([
+                            'owner_delete'=>false,
+                            'participant_delete'=>false
+                        ]);
 						return response()->json([
             'message' => 'Message sent',
         ],201);
@@ -161,16 +165,60 @@ class MessagesController extends Controller
 
     public function fetchChats(Request $request)
     {
-        $gg =  Auth::guard('api')->user();
-        $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
-            with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
-        return $c;
+          $gg =  Auth::guard('api')->user();
+        $cg = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->get();
+        foreach ($cg as $ddf) {
+            if ($ddf->owner_id == $gg->id) {
+                $c = Chat::where('owner_id', $gg->id)->orWhere('participant_id', $gg->id)->where('owner_delete',false)->
+                with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
+                return $c;
+            }
+            if ($ddf->participant_id == $gg->id) {
+                $c = Chat::where('owner_id', $gg->id)->orWhere('participant_id', $gg->id)->where('participant_delete',false)->
+                with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
+                return $c;
+            }
+        }
+//        $ids = User::all();
+//        $part = Chat::all();
+//        $arid = [];
+//        foreach ($ids as $single){
+//            array_push($arid,$single->id);
+//        }
+//        $cg = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->get();
+//        foreach ($cg as $ddf){
+//            foreach ($part as $pty){
+//                if (in_array($pty->participant_id,$arid)&&$ddf->owner_id == $gg->id){
+//                    $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
+//                    with('participant')->with('owner')->with('receiver')->latest('updated_at')->where('owner_delete',false)->get();
+//                    return $c;
+//                }
+//                if (!in_array($pty->participant_id,$arid)&& $ddf->owner_id == $gg->id){
+//                    $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
+//                    with('owner')->with('receiver')->latest('updated_at')->where('owner_delete',false)->get();
+//                    return $c;
+//                }
+//                if (in_array($pty->participant_id,$arid) && $ddf->participant_id == $gg->id){
+//                    $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
+//                    with('participant')->with('owner')->with('receiver')->latest('updated_at')->where('owner_delete',false)->get();
+//                    return $c;
+//                }
+//                if (!in_array($pty->participant_id,$arid) && $ddf->participant_id == $gg->id){
+//                    $c = Chat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
+//                    with('owner')->with('receiver')->latest('updated_at')->where('owner_delete',false)->get();
+//                    return $c;
+//                }
+//            }
+//
+//
+//
+//        }
 
     }
     public function fetchMessages(Request $request)
     {
-        $m = Message::where('chat_id', $request->chat_id)->latest()->get();
-        return $m;
+        $mc = Message::where('chat_id', $request->chat_id)->latest()->get();
+        return $mc;
     }
 
     public function unreadMessages()
@@ -184,7 +232,7 @@ class MessagesController extends Controller
 
     public function readUnreadMessages(Request $request)
     {
-        $mmm = Message::where('chat_id',$request->chat_id)->get();
+        $mmm = Message::where('chat_id',$request->chat_id)->where('receiver_id',Auth::guard('api')->user()->id)->get();
         foreach ($mmm as $ddd){
             $ddd->receiver_read=true;
             $ddd->save();
@@ -192,5 +240,65 @@ class MessagesController extends Controller
         return response()->json([
             'message' => 'Done',
         ],201);
+    }
+
+    public function deleteChat(Request $request)
+    {
+        $ch = Chat::where('id',$request->id)->first();
+        $m = Message::where('chat_id',$request->id)->get();
+        $rr = [];
+        if ($ch->owner_id == Auth::guard('api')->user()->id) {
+            $ch->update([
+                'owner_delete' => true
+            ]);
+            foreach ($m as $sen) {
+                $sen->delete();
+            }
+            return response()->json([
+                'message' => 'Deleted',
+            ],201);
+        }if ($ch->participant_id== Auth::guard('api')->user()->id) {
+        $ch->update([
+            'participant_delete' => true
+        ]);
+        foreach ($m as $sen) {
+            if ($sen->sender_id == Auth::guard('api')->user()->id) {
+                $sen->delete();
+
+            }
+            return response()->json([
+                'message' => 'Deleted',
+            ], 201);
+        }
+    }
+        else{
+            return response()->json([
+                'message' => 'failed',
+            ],200);
+        }
+    }
+    public function deleteMessage(Request $request)
+    {
+        $mes = Message::where('id',$request->id)->first();
+        if ($mes->sender_id == Auth::guard('api')->user()->id){
+            $mes->update([
+                'sender_delete'=>1
+            ]);
+            return response()->json([
+                'message' => 'Delete',
+            ],201);
+    }if ($mes->receiver_id == Auth::guard('api')->user()->id){
+        $mes->update([
+            'receiver_delete'=>1
+        ]);
+        return response()->json([
+            'message' => 'Delete',
+        ],201);
+    }
+       else{
+           return response()->json([
+               'message' => 'failed',
+           ],200);
+       }
     }
 }

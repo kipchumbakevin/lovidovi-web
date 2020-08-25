@@ -160,9 +160,19 @@ class SecretMesssagesController extends Controller
     public function fetchSecretChats(Request $request)
     {
         $gg =  Auth::guard('api')->user();
-        $c = SecretChat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->
-            with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
-        return $c;
+        $c = SecretChat::where('owner_id',$gg->id)->orWhere('participant_id',$gg->id)->get();
+        foreach ($c as $ddf) {
+            if ($ddf->owner_id == $gg->id) {
+                $c = SecretChat::where('owner_id', $gg->id)->orWhere('participant_id', $gg->id)->where('owner_delete',false)->
+                with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
+                return $c;
+            }
+            if ($ddf->participant_id == $gg->id) {
+                $c = SecretChat::where('owner_id', $gg->id)->orWhere('participant_id', $gg->id)->where('participant_delete',false)->
+                with('participant')->with('owner')->with('receiver')->latest('updated_at')->get();
+                return $c;
+            }
+        }
 
     }
     public function fetchSecretMessages(Request $request)
@@ -172,7 +182,7 @@ class SecretMesssagesController extends Controller
     }
     public function readUnreadMessages(Request $request)
     {
-        $mmm = SecretMessage::where('chat_id',$request->chat_id)->get();
+        $mmm = SecretMessage::where('chat_id',$request->chat_id)->where('receiver_id',Auth::guard('api')->user()->id)->get();
         foreach ($mmm as $ddd){
             $ddd->receiver_read=true;
             $ddd->save();
@@ -188,5 +198,63 @@ class SecretMesssagesController extends Controller
             'num' => $notif,
         ],201);
 
+    }
+    public function deleteChat(Request $request)
+    {
+        $ch = SecretChat::where('id',$request->id)->first();
+        $m = SecretMessage::where('chat_id',$request->id)->get();
+        $rr = [];
+        if ($ch->owner_id == Auth::guard('api')->user()->id){
+            $ch->update([
+                'owner_delete'=>1
+            ]);
+            foreach ($m as $sen){
+                    $sen->delete();
+
+            }
+            return response()->json([
+                'message' => 'Deleted',
+            ],201);
+        }if ($ch->participant_id == Auth::guard('api')->user()->id){
+        $ch->update([
+            'participant_delete'=>1
+        ]);
+        foreach ($m as $sen){
+            $sen->delete();
+
+        }
+        return response()->json([
+            'message' => 'Deletetd',
+        ],201);
+    }
+    else{
+        return response()->json([
+            'message' => 'failed',
+        ],200);
+    }
+    }
+    public function deleteMessage(Request $request)
+    {
+        $mes = SecretMessage::where('id',$request->id)->first();
+        if ($mes->sender_id == Auth::guard('api')->user()->id){
+            $mes->update([
+                'sender_delete'=>1
+            ]);
+            return response()->json([
+                'message' => 'Delete',
+            ],201);
+        }if ($mes->receiver_id == Auth::guard('api')->user()->id){
+        $mes->update([
+            'receiver_delete'=>1
+        ]);
+        return response()->json([
+            'message' => 'Delete',
+        ],201);
+    }
+    else{
+        return response()->json([
+            'message' => 'failed',
+        ],200);
+    }
     }
 }
