@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/privacypolicy.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SecretMesssagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/SecretChat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SecretChat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/SecretMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SecretMessage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_26_171443_create_messages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_28_112530_create_chats_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_30_072230_create_secret_messages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_30_073842_create_secret_chats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_30_073842_create_secret_chats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FundraiserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FundraiserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,6 +227,8 @@
       <workItem from="1598196631793" duration="12603000" />
       <workItem from="1598360926051" duration="2772000" />
       <workItem from="1598372206993" duration="801000" />
+      <workItem from="1598513368441" duration="1164000" />
+      <workItem from="1599302594481" duration="13848000" />
     </task>
     <servers />
   </component>
@@ -254,5 +247,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/SecretChat.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

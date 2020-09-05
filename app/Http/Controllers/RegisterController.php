@@ -10,24 +10,24 @@ class RegisterController extends Controller
     public function insert(Request $request)
     {
         $op = $request['phone'];
+		$f = Register::where('phone',$op)->first();
         $pp = Register::all();
         $p = [];
         foreach ($pp as $ph){
             array_push($p,$ph->phone);
         }
-        if (in_array($op,$p)){
-            $f = Register::where('phone',$op)->first();
-            if ($request['password']==$f->password){
-                return response()->json([
+        if (in_array($op,$p)&&$request['password']==$f->password){
+           
+			return response()->json([
                     'message' => 'Done',
                 ], 200);
-            }
-            if ($request['password']!=$f->password){
+		}
+         if (in_array($op,$p)&& $request['password']!=$f->password){
                 return response()->json([
                     'message' => 'Wrong password',
                 ], 201);
             }
-        }else{
+        if(!in_array($op,$p)){
             $ppp = new Register();
             $ppp->phone = $op;
             $ppp->Name = $request['name'];

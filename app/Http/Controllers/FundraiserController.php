@@ -67,6 +67,7 @@ class FundraiserController extends Controller
     {
         $searched = Fundraiser::where('pin',$request['id'])->with('owner')
             ->with('contribution')->with('payments')->latest()->get();
+			return $searched;
     }
     public function fetchFundraisers(Request $request)
     {
@@ -95,18 +96,5 @@ class FundraiserController extends Controller
             $cx->seen = true;
             $cx->save();
         }
-    }
-
-    public function deleteFund(Request $request)
-    {
-        $iid = $request['id'];
-        $fund = Fundraiser::where('id',$iid)->first();
-        $contr = Contribution::where('fund_id',$iid)->get();
-        $payy = Payment::where('fund_id',$iid)->first();
-        foreach ($contr as $con){
-            $con->delete();
-        }
-        $fund->delete();
-        $payy->delete();
     }
 }

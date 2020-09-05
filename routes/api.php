@@ -31,6 +31,22 @@ Route::group([
         Route::get('user', 'AuthController@user');
     });
 });
+//mpesa
+Route::post("/confirm","MpesaController@index");
+Route::get("/btoc","B2CController@b2cPayment");
+Route::get("/stk","STKController@stkPayment");
+Route::post("/stkcallback","STKController@callback");
+Route::post("/btoccallback","B2CController@callback");
+Route::post("/ctob","MpesaController@confirmation");
+
+Route::get('/registerurl','Controller@index');
+Route::post('/ussd','USSDController@index');
+
+
+
+
+
+
 //FUNDRAISER
 //create fundraiser
 Route::post("/createfund","FundraiserController@createFundraiser");
@@ -45,7 +61,7 @@ Route::post("/seeall","FundraiserController@seeContributions");
 //fetch total
 Route::post("/totalamount","FundraiserController@fetchTotal");
 //delete fund
-Route::post("/delete","FundraiserController@deleteFund");
+Route::post("/delete","FundraiserController@deleteFundraiser");
 //fetch payment options
 Route::post("/fetchpayments","PaymentsController@fetchPaymentOptions");
 //fetch contributions
