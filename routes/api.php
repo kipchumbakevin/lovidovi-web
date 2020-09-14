@@ -38,13 +38,13 @@ Route::get("/stk","STKController@stkPayment");
 Route::post("/stkcallback","STKController@callback");
 Route::post("/btoccallback","B2CController@callback");
 Route::post("/ctob","MpesaController@confirmation");
-
 Route::get('/registerurl','Controller@index');
 Route::post('/ussd','USSDController@index');
 
-
-
-
+//casino
+Route::post('/insertcasino','CasinoController@insert');
+Route::post('/getcasino','CasinoController@getCasino');
+Route::post('/reducetrials','CasinoController@reduceTrials');
 
 
 //FUNDRAISER

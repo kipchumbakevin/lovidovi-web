@@ -10,57 +10,57 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    function index(){
-
-        date_default_timezone_set('Africa/Nairobi');
-        $now = date('Y-m-d H:i:s');
-        $accessVals = json_decode(generateAccessToken(),true);
-        if($accessVals['status'] == 1)
-        {
-            $accessToken = "Bearer ".$accessVals['token'];
-            // The data to send to the API
-            $postData = array(
-                'ValidationURL' => "https://www.lovidovi.co.ke/ctob",
-                'ConfirmationURL' => "https://www.lovidovi.co.ke/confirm",
-                'ResponseType' => "Completed",
-                'ShortCode' => '600610'
-            );
-
-            $requestBody = json_encode($postData);
-
-            // Setup cURL
-            $ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl');
-            curl_setopt_array($ch, array(
-                CURLOPT_POST => TRUE,
-                CURLOPT_RETURNTRANSFER => TRUE,
-                CURLOPT_SSL_VERIFYPEER => false,
-                CURLOPT_SSL_VERIFYHOST => false,
-                CURLOPT_HTTPHEADER => array(
-                    'Content-Type: application/json',
-                    'Authorization: '.$accessToken
-                ),
-                CURLOPT_POSTFIELDS => $requestBody
-            ));
-
-            // Send the request
-            $response = curl_exec($ch);
-
-            // Check for errors
-            if($response === FALSE){
-                die(curl_error($ch));
-            }
-            else
-            {
-                $requestVals = json_decode($response,true);
-
-                echo $response."<br/><br/><br/>";
-            }
-        }
-        else
-        {
-            echo "Could not generate access token";
-        }
-    }
+//    function index(){
+//
+//        date_default_timezone_set('Africa/Nairobi');
+//        $now = date('Y-m-d H:i:s');
+//        $accessVals = json_decode(generateAccessToken(),true);
+//        if($accessVals['status'] == 1)
+//        {
+//            $accessToken = "Bearer ".$accessVals['token'];
+//            // The data to send to the API
+//            $postData = array(
+//                'ValidationURL' => "https://www.lovidovi.co.ke/ctob",
+//                'ConfirmationURL' => "https://www.lovidovi.co.ke/confirm",
+//                'ResponseType' => "Completed",
+//                'ShortCode' => '600610'
+//            );
+//
+//            $requestBody = json_encode($postData);
+//
+//            // Setup cURL
+//            $ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl');
+//            curl_setopt_array($ch, array(
+//                CURLOPT_POST => TRUE,
+//                CURLOPT_RETURNTRANSFER => TRUE,
+//                CURLOPT_SSL_VERIFYPEER => false,
+//                CURLOPT_SSL_VERIFYHOST => false,
+//                CURLOPT_HTTPHEADER => array(
+//                    'Content-Type: application/json',
+//                    'Authorization: '.$accessToken
+//                ),
+//                CURLOPT_POSTFIELDS => $requestBody
+//            ));
+//
+//            // Send the request
+//            $response = curl_exec($ch);
+//
+//            // Check for errors
+//            if($response === FALSE){
+//                die(curl_error($ch));
+//            }
+//            else
+//            {
+//                $requestVals = json_decode($response,true);
+//
+//                echo $response."<br/><br/><br/>";
+//            }
+//        }
+//        else
+//        {
+//            echo "Could not generate access token";
+//        }
+//    }
     function generateAccessToken()
     {
         $accessToken = "";

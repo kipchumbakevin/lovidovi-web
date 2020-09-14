@@ -57,7 +57,7 @@ class B2CController extends Controller
                         $requestBody = json_encode($postData);
 
                         // Setup cURL
-                        $ch = curl_init('https://api.safaricom.co.ke/mpesa/b2c/v1/paymentrequest');
+                        $ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest');
                         curl_setopt_array($ch, array(
                             CURLOPT_POST => TRUE,
                             CURLOPT_RETURNTRANSFER => TRUE,

@@ -5,19 +5,19 @@ namespace App\Http\Controllers;
 use App\STKModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class STKController extends Controller
 {
     function stkPayment($amount=1, $phone="+254706459189", $reference="Samsung", $description="Kevin")
     {
+
         $now = Carbon::now('Africa/Nairobi');
         $phoneFormat = json_decode($this->phoneFormat($phone), TRUE);
         $phone = $phoneFormat['formattedPhone'];
-
         $MerchantRequestID = '';
         $status = 0;
         $ResponseDescription = '';
-
         $tokenResult = $this->generateAccessToken();
         $accessVals = json_decode($tokenResult, TRUE);
 
@@ -166,7 +166,7 @@ class STKController extends Controller
                 $TransactionDate = $successVals['Body']['stkCallback']['CallbackMetadata']['Item'][3]['Value'];
 //                $PhoneNumber = $successVals['Body']['stkCallback']['CallbackMetadata']['Item'][4]['Value'];
 
-                $stkRequest = STKModel::where('merchant_request_id', $MerchantRequestID)->first();
+                $stkRequest = STKModel::where('merchant_request_id', '9791-123374753-1')->first();
 
                 $stkRequest->mpesa_code = $MpesaReceiptNumber;//(Mpesa reference number)
                 //0 = pending
