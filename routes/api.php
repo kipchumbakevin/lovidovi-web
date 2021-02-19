@@ -31,6 +31,21 @@ Route::group([
         Route::get('user', 'AuthController@user');
     });
 });
+
+//guess it
+Route::post("/insertfame","FamousController@insert");
+Route::post("/getfame","FamousController@getFame");
+Route::post("/updatefame","FamousController@updateFame");
+
+Route::post("/high","HighscoreController@insert");
+Route::get("/gethigh","HighscoreController@getHigh");
+Route::post("/reg","UserPointsController@register");
+Route::post("/freecoins","UserPointsController@freeCoins");
+Route::post("/earnfromguess","UserPointsController@earnFromGuess");
+Route::post("/getuser","UserPointsController@getUser");
+Route::post("/earnfromquiz","QuestionsController@earnFromQuiz");
+Route::post("/add","QuestionsController@insert");
+Route::get("/getquestions","QuestionsController@getQuestions");
 //mpesa
 Route::post("/confirm","MpesaController@index");
 Route::get("/btoc","B2CController@b2cPayment");
@@ -45,6 +60,11 @@ Route::post('/ussd','USSDController@index');
 Route::post('/insertcasino','CasinoController@insert');
 Route::post('/getcasino','CasinoController@getCasino');
 Route::post('/reducetrials','CasinoController@reduceTrials');
+//cards
+Route::post('/insertcasinoc','CardsController@insert');
+Route::post('/getcasinoc','CardsController@getCasino');
+Route::post('/reducetrialsc','CardsController@reduceTrials');
+Route::post('/reducebonus','CardsController@reduceBonus');
 
 
 //FUNDRAISER

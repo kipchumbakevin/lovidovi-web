@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/audio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lovidovi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lovidovi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/B2CController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/B2CController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/STKController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/STKController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CasinoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CasinoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_05_115430_create_s_t_k_models_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_05_115430_create_s_t_k_models_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -133,6 +139,16 @@
       <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
       <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
       <path value="$PROJECT_DIR$/vendor/africastalking/africastalking" />
+      <path value="$PROJECT_DIR$/vendor/grpc/grpc" />
+      <path value="$PROJECT_DIR$/vendor/google/cloud-core" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/vendor/google/common-protos" />
+      <path value="$PROJECT_DIR$/vendor/google/cloud-speech" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/google/grpc-gcp" />
+      <path value="$PROJECT_DIR$/vendor/google/gax" />
+      <path value="$PROJECT_DIR$/vendor/google/protobuf" />
+      <path value="$PROJECT_DIR$/vendor/rize/uri-template" />
     </include_path>
   </component>
   <component name="ProjectId" id="1bqw0GsQMcXyTz2VBq30BdPMIkj" />
@@ -140,8 +156,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../iGrand" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\lovidovi\vendor" />
+      <recent name="C:\xampp\htdocs\lovidovi\app\Http\Controllers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -235,6 +257,18 @@
       <workItem from="1599994351177" duration="1353000" />
       <workItem from="1600089288414" duration="2762000" />
       <workItem from="1600100806772" duration="1589000" />
+      <workItem from="1600500923936" duration="3900000" />
+      <workItem from="1601317728787" duration="969000" />
+      <workItem from="1605253086468" duration="1177000" />
+      <workItem from="1607446717517" duration="4157000" />
+      <workItem from="1607495383385" duration="2206000" />
+      <workItem from="1607500362955" duration="3298000" />
+      <workItem from="1610186591242" duration="2030000" />
+      <workItem from="1612174012509" duration="10193000" />
+      <workItem from="1612268584678" duration="1910000" />
+      <workItem from="1613468691986" duration="2733000" />
+      <workItem from="1613632109445" duration="2725000" />
+      <workItem from="1613652944794" duration="411000" />
     </task>
     <servers />
   </component>

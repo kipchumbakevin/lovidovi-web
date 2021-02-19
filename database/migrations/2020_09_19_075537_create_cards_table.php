@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSTKModelsTable extends Migration
+class CreateCardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateSTKModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('s_t_k_models', function (Blueprint $table) {
+        Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->string('mpesa_code')->nullable();
-            $table->string('phone')->nullable();
-            $table->integer('status')->default(0);
-            $table->integer('amount')->nullable();
-            $table->string('merchant_request_id');
+            $table->string('phone');
+            $table->integer('trials');
+            $table->integer('amount');
+            $table->integer('bonus')->default(0);
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateSTKModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('s_t_k_models');
+        Schema::dropIfExists('cards');
     }
 }

@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Casino;
+use App\Cards;
 use Illuminate\Http\Request;
+use function Sodium\crypto_box_publickey_from_secretkey;
 
-class CasinoController extends Controller
+class CardsController extends Controller
 {
     public function insert(Request $request)
     {
-        $casino = Casino::where('phone',$request['phone'])->first();
-        if ($casino != null){
-            $casino->update([
+        $cards = Cards::where('phone',$request['phone'])->first();
+        if ($cards != null){
+            $cards->update([
                 'trials'=>3,
                 'amount'=>$request['amount']
             ]);
         }else{
-            $cas = new Casino();
+            $cas = new Cards();
             $cas->phone = $request['phone'];
             $cas->trials=3;
             $cas->amount=$request['amount'];
@@ -28,7 +29,7 @@ class CasinoController extends Controller
     }
     public function reduceTrials(Request $request)
     {
-        $cc = Casino::where('phone',$request['phone'])->first();
+        $cc = Cards::where('phone',$request['phone'])->first();
         $cc->update([
             'trials'=>($cc->trials)-1
         ]);
@@ -36,16 +37,24 @@ class CasinoController extends Controller
             'message' => 'sucess',
         ]);
     }
-    public function getCasino(Request $request)
+    public function getCards(Request $request)
     {
-        $cc = Casino::where('phone',$request['phone'])->first();
-        if ($cc != null){
+        $cc = Cards::where('phone', $request['phone'])->first();
+        if ($cc != null) {
             $num = $cc->trials;
-        }else{
+        } else {
             $num = 0;
         }
         return response()->json([
             'num' => $num,
+        ]);
+    }
+
+    public function reduceBonus(Request $request)
+    {
+        $bonus = Cards::where('phone',$request['phone'])->first();
+        $bonus->update([
+            'bonus'=>($bonus->bonus)-1
         ]);
     }
 }
