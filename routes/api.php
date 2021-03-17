@@ -31,6 +31,67 @@ Route::group([
         Route::get('user', 'AuthController@user');
     });
 });
+//this that
+Route::post("/insertwould","WouldYouController@insert");
+Route::post("/answerwould","WouldYouController@answer");
+Route::get("/getwould","WouldYouController@fetch");
+Route::post("/getsp","WouldYouController@fetchSp");
+
+Route::post("/registerthisthat","ThisThatUserController@insert");
+Route::post("/fetchtuser","ThisThatUserController@fetchUser");
+
+Route::post("/insertceleb","CelebritiesController@insert");
+Route::post("/getceleb","CelebritiesController@fetchCeleb");
+Route::get("/getallceleb","CelebritiesController@fetchAllCeleb");
+Route::get("/getalllife","CelebritiesController@fetchLife");
+Route::get("/getallfood","CelebritiesController@fetchFood");
+Route::get("/getallpartner","CelebritiesController@fetchPartner");
+
+
+Route::post("/addlifestyle","CelebritiesController@addLifestyle");
+Route::post("/addfood","CelebritiesController@addFood");
+Route::post("/addpartner","CelebritiesController@addPartner");
+//self
+Route::post("/selflife","SelfEvaluationController@selfLife");
+Route::post("/selffood","SelfEvaluationController@selfFood");
+Route::post("/selfpartner","SelfEvaluationController@selfPartner");
+Route::post("/selfceleb","SelfEvaluationController@selfCeleb");
+
+Route::post("/specificlife","SelfEvaluationController@specificLifestyle");
+Route::post("/specificfood","SelfEvaluationController@specificFood");
+Route::post("/specificceleb","SelfEvaluationController@specificCeleb");
+Route::post("/specificpartner","SelfEvaluationController@specificPartner");
+//where i am the evaluatee
+Route::post("/fetchmylife","SelfEvaluationController@fetchLifestyle");
+Route::post("/fetchmyfood","SelfEvaluationController@fetchFood");
+Route::post("/fetchmyceleb","SelfEvaluationController@fetchCeleb");
+Route::post("/fetchmypartner","SelfEvaluationController@fetchPartner");
+//specific
+Route::post("/fetchmyspecificlife","FriendEvaluationController@fetchLifestyle");
+Route::post("/fetchmyspecificfood","FriendEvaluationController@fetchFood");
+Route::post("/fetchmyspecificceleb","FriendEvaluationController@fetchCeleb");
+Route::post("/fetchmyspecificpartner","FriendEvaluationController@fetchPartner");
+
+//i am the evaluator
+Route::post("/fetchflife","SelfEvaluationController@fetchfLifestyle");
+Route::post("/fetchffood","SelfEvaluationController@fetchfFood");
+Route::post("/fetchfceleb","SelfEvaluationController@fetchfCeleb");
+Route::post("/fetchfpartner","SelfEvaluationController@fetchfPartner");
+//specific
+Route::post("/fetchfspecificlife","FriendEvaluationController@fetchfLifestyle");
+Route::post("/fetchfspecificfood","FriendEvaluationController@fetchfFood");
+Route::post("/fetchfspecificceleb","FriendEvaluationController@fetchfCeleb");
+Route::post("/fetchfspecificpartner","FriendEvaluationController@fetchfPartner");
+
+//friend
+Route::post("/friendlife","FriendEvaluationController@friendLife");
+Route::post("/friendfood","FriendEvaluationController@friendFood");
+Route::post("/friendceleb","FriendEvaluationController@friendCeleb");
+Route::post("/friendpartner","FriendEvaluationController@friendPartner");
+
+
+
+
 
 //guess it
 Route::post("/insertfame","FamousController@insert");

@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c3f8256-c7fa-4b87-a0d3-0ef2d456fdf3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/audio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lovidovi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lovidovi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CasinoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CasinoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_05_115430_create_s_t_k_models_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_05_115430_create_s_t_k_models_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -269,6 +260,16 @@
       <workItem from="1613468691986" duration="2733000" />
       <workItem from="1613632109445" duration="2725000" />
       <workItem from="1613652944794" duration="411000" />
+      <workItem from="1615625850210" duration="8718000" />
+      <workItem from="1615708250135" duration="4558000" />
+      <workItem from="1615729609395" duration="10256000" />
+      <workItem from="1615829015596" duration="1725000" />
+      <workItem from="1615872948925" duration="4028000" />
+      <workItem from="1615878687631" duration="1120000" />
+      <workItem from="1615917903054" duration="933000" />
+      <workItem from="1615920040805" duration="518000" />
+      <workItem from="1615959846915" duration="2183000" />
+      <workItem from="1615969160962" duration="1791000" />
     </task>
     <servers />
   </component>
