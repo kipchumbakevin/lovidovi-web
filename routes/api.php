@@ -31,11 +31,34 @@ Route::group([
         Route::get('user', 'AuthController@user');
     });
 });
+//mkulima
+Route::post("/mkulimasendcode","\App\Http\Controllers\MkulimaController@mkulimaSendCode");
+Route::post("/mkulimaregister","\App\Http\Controllers\MkulimaController@mkulimaRegister");
+Route::post("/mkulimalogin","\App\Http\Controllers\MkulimaController@login");
+Route::post('/checkmkulima','MkulimaController@checkIfExist');
+Route::post('/getmkulima','MkulimaController@getMkulima');
+Route::post('/payup','MkulimaController@payUp');
+Route::post('/withdraw','MkulimaController@withdraw');
+//issues
+Route::post("/addissue","IssuesController@addIssue");
+Route::post("/fetchissues","IssuesController@fetchIssues");
+Route::post("/fetchmine","IssuesController@fetchMine");
+Route::post("/fetchc","IssuesController@fetchC");
+Route::post("/addhelper","IssuesController@addHelper");
+Route::post("/fetchhelper","IssuesController@fetchHelpers");
+Route::post("/deleteissue","IssuesController@deleteIssue");
+
 //this that
 Route::post("/insertwould","WouldYouController@insert");
 Route::post("/answerwould","WouldYouController@answer");
 Route::get("/getwould","WouldYouController@fetch");
 Route::post("/getsp","WouldYouController@fetchSp");
+
+//never
+Route::post("/insertnever","NeverHaveController@insert");
+Route::post("/answernever","NeverHaveController@answer");
+Route::get("/getnever","NeverHaveController@fetch");
+Route::post("/getsnever","NeverHaveController@fetchS");
 
 Route::post("/registerthisthat","ThisThatUserController@insert");
 Route::post("/fetchtuser","ThisThatUserController@fetchUser");

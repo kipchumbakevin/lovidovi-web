@@ -40,7 +40,7 @@ class SelfEvaluationController extends Controller
             ]);
         }else if ($key == 2){
             $ggg->update([
-                'pickB'=>$ggg->pickA + 1,
+                'pickB'=>$ggg->pickB + 1,
                 'total'=>$ggg->total + 1
             ]);
         }
@@ -49,7 +49,7 @@ class SelfEvaluationController extends Controller
         ]);
         if ($request['categoryId'] == 30){
             $user->update([
-                'complete'=> 2
+                'complete'=> 1
             ]);
         }
         return response()->json([
@@ -73,7 +73,7 @@ class SelfEvaluationController extends Controller
             ]);
         }else if ($key == 2){
             $ggg->update([
-                'pickB'=>$ggg->pickA + 1,
+                'pickB'=>$ggg->pickB + 1,
                 'total'=>$ggg->total + 1
             ]);
         }
@@ -82,7 +82,7 @@ class SelfEvaluationController extends Controller
         ]);
         if ($request['categoryId'] == 30){
             $user->update([
-                'complete'=> 3
+                'completeF'=> 1
             ]);
         }
         return response()->json([
@@ -106,7 +106,7 @@ class SelfEvaluationController extends Controller
             ]);
         }else if ($key == 2){
             $ggg->update([
-                'pickB'=>$ggg->pickA + 1,
+                'pickB'=>$ggg->pickB + 1,
                 'total'=>$ggg->total + 1
             ]);
         }
@@ -115,7 +115,7 @@ class SelfEvaluationController extends Controller
         ]);
 		if ($request['categoryId'] == 10){
             $user->update([
-                'complete'=> 5
+                'completeP'=> 1
             ]);
         }
         return response()->json([
@@ -139,16 +139,16 @@ class SelfEvaluationController extends Controller
             ]);
         }else if ($key == 2){
             $ggg->update([
-                'pickB'=>$ggg->pickA + 1,
+                'pickB'=>$ggg->pickB + 1,
                 'total'=>$ggg->total + 1
             ]);
         }
         $user->update([
             'celebrity'=>$request['categoryId']
         ]);
-        if ($request['categoryId'] == 33){
+        if ($request['categoryId'] == 30){
             $user->update([
-                'complete'=> 4
+                'completeC'=> 1
             ]);
         }
         return response()->json([
@@ -171,6 +171,7 @@ class SelfEvaluationController extends Controller
         $spe = Celebrity::where('id',$request['id'])->first();
         return $spe;
     }
+
     public function specificPartner(Request $request)
     {
         $spe = AddPartner::where('id',$request['id'])->first();
@@ -182,11 +183,13 @@ class SelfEvaluationController extends Controller
         $frie = CheckLifestyle::where('evaluateePhone',$request['phone'])->latest()->get();
         return $frie;
     }
+
     public function fetchFood(Request $request)
     {
         $frie = CheckFood::where('evaluateePhone',$request['phone'])->latest()->get();
         return $frie;
     }
+
     public function fetchPartner(Request $request)
     {
         $frie = CheckPartner::where('evaluateePhone',$request['phone'])->latest()->get();
